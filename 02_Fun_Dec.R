@@ -34,3 +34,5 @@ names(dmatrix)<-paste0("d",deciles[,1])
 ### Llenar la matrix usando ifelse
 
 ### Llenar cuadro resumen con la variable a resumir
+
+### Cómo tratar los NAs 
