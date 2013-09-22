@@ -21,10 +21,17 @@ deciles[,"hogac"] <- cumsum(deciles[,"hogares"])
 
 deciles
 
-### Matriz de dummies
+### Matriz de dummies ----
 
 dmatrix <- as.data.frame(matrix(0,nrow=n,ncol=q))
 names(dmatrix)<-paste0("d",deciles[,1])
+
+### Llenar de unos ----
+
+dmatrix[cumsum(factorex)<N/q,1] <- 1
+
+
+
 
 
 ### Ordenar la base por la variable y
