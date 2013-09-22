@@ -60,22 +60,4 @@ for(i in q:2){
 
 head(dmatrix)
 
-# Índices de cambio ----
-
-cambio <- data.frame(cambio.id=rep(NA,q))
-
-for(i in 1:q){
-cambio[i,"cambio.id"] <- tail(cumsum(y$factorexac<=deciles$hogac[i]))[5]+1
-}
-
-cambio$factorex <- y$factorex[cambio$cambio.id]
-
-cambio$factorexac <- cumsum(cambio$factorex)
-
-cambio$hogac <- deciles$hogac
-
-cambio$porc <- with(cambio,(factorex-hogac)/factorex)
-
-(y$factorex[6667]-deciles$hogac[1])/y$factorex[6667]
-
-(y$factorex[6667]-deciles$hogac[2])/y$factorex[6667]
+dmatrix[6667,"d1"]
